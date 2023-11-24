@@ -163,10 +163,10 @@ class TestShapeFunctionality(unittest.TestCase):
         rectangle = Rectangle(3.0, 5.0)
         triangle = Triangle(3.0, 4.0, 5.0)
 
-        self.assertEqual(circle.get_name(), "Circle")
-        self.assertEqual(square.get_name(), "Square")
-        self.assertEqual(rectangle.get_name(), "Rectangle")
-        self.assertEqual(triangle.get_name(), "Triangle")
+        self.assertEqual(circle.name, "Circle")
+        self.assertEqual(square.name, "Square")
+        self.assertEqual(rectangle.name, "Rectangle")
+        self.assertEqual(triangle.name, "Triangle")
 
 
 class TestShapeFactoryFunctionality(unittest.TestCase):
@@ -174,7 +174,7 @@ class TestShapeFactoryFunctionality(unittest.TestCase):
         shape_factory = ShapeFactory()
         circle = shape_factory.create_circle(5.0)
         self.assertIsInstance(circle, Circle)
-        self.assertEqual(circle.get_name(), "Circle")
+        self.assertEqual(circle.name, "Circle")
         self.assertAlmostEqual(circle.area(), 78.54, places=2)
         self.assertAlmostEqual(circle.perimeter(), 31.42, places=2)
 
@@ -182,7 +182,7 @@ class TestShapeFactoryFunctionality(unittest.TestCase):
         shape_factory = ShapeFactory()
         square = shape_factory.create_square(4.0)
         self.assertIsInstance(square, Square)
-        self.assertEqual(square.get_name(), "Square")
+        self.assertEqual(square.name, "Square")
         self.assertEqual(square.area(), 16.0)
         self.assertEqual(square.perimeter(), 16.0)
 
@@ -190,7 +190,7 @@ class TestShapeFactoryFunctionality(unittest.TestCase):
         shape_factory = ShapeFactory()
         rectangle = shape_factory.create_rectangle(3.0, 5.0)
         self.assertIsInstance(rectangle, Rectangle)
-        self.assertEqual(rectangle.get_name(), "Rectangle")
+        self.assertEqual(rectangle.name, "Rectangle")
         self.assertEqual(rectangle.area(), 15.0)
         self.assertEqual(rectangle.perimeter(), 16.0)
 
@@ -198,7 +198,7 @@ class TestShapeFactoryFunctionality(unittest.TestCase):
         shape_factory = ShapeFactory()
         triangle = shape_factory.create_triangle(3.0, 4.0, 5.0)
         self.assertIsInstance(triangle, Triangle)
-        self.assertEqual(triangle.get_name(), "Triangle")
+        self.assertEqual(triangle.name, "Triangle")
         self.assertEqual(triangle.area(), 6.0)
         self.assertEqual(triangle.perimeter(), 12.0)
 

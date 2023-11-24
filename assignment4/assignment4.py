@@ -24,15 +24,6 @@ class Shape(ABC):
         """
         return self.draw()
 
-    def get_name(self):
-        """
-        Get the name of the shape.
-
-        Returns:
-        - str: The name of the shape.
-        """
-        return self._name
-
     @property
     def name(self):
         """
@@ -152,20 +143,6 @@ class Triangle(Shape):
     def perimeter(self):
         return self._side1 + self._side2 + self._side3
 
-
-# class ShapeFactory:
-#     @staticmethod
-#     def create_shape(shape_name, *args):
-#         if shape_name == "Circle":
-#             return Circle(*args)
-#         elif shape_name == "Square":
-#             return Square(*args)
-#         elif shape_name == "Rectangle":
-#             return Rectangle(*args)
-#         elif shape_name == "Triangle":
-#             return Triangle(*args)
-#         else:
-#             raise ValueError("Invalid shape name")
 
 class ShapeFactory:
     """
@@ -408,6 +385,11 @@ class DrawingProgramMain:
         new_square = ShapeFactory.create_square(5.0)
         drawing_program.set_shape(1, new_square)
 
+        # Test replacement shape
+        drawing_program.sort_shapes()
+        print("\nDrawingProgram after replacing a shape:")
+        for shape in drawing_program:
+            print(shape)
 
         # Sort the shapes again
         drawing_program.sort_shapes()
