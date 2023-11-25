@@ -7,6 +7,7 @@ Chijioke Obodoekwe
   - UML - Chijioke
   - Readme - Chijioke
   - Code review - Chijioke Yvonne David
+  - Organized the files using GitHub 
 
   SHORTCOMINGS/CONCERNS
   - Still trying to understand the dynamics of UML
