@@ -3,10 +3,11 @@ Yvonne Awasom
 Chijioke Obodoekwe
 
   - Code for classes and methods - David / Yvonne
-  - Unit testing - Yvonne
+  - Unit testing - Yvonne / David
   - UML - Chijioke
   - Readme - Chijioke
   - Code review - Chijioke Yvonne David
+  - Organized the files using GitHub - Chijioke
 
   SHORTCOMINGS/CONCERNS
   - Still trying to understand the dynamics of UML
