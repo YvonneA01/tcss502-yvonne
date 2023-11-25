@@ -381,13 +381,19 @@ class DrawingProgramMain:
         drawing_program.add_shape(rectangle)
         drawing_program.add_shape(triangle)
 
+        # Adding new shapes
+        drawing_program.sort_shapes()
+        print("\nDrawingProgram after adding more shapes:")
+        for shape in drawing_program:
+            print(shape)
+
         # Replace a shape in the DrawingProgram
         new_square = ShapeFactory.create_square(5.0)
         drawing_program.set_shape(1, new_square)
 
         # Test replacement shape
         drawing_program.sort_shapes()
-        print("\nDrawingProgram after replacing a shape:")
+        print("\nDrawingProgram after replacing a shape dimension:")
         for shape in drawing_program:
             print(shape)
 
