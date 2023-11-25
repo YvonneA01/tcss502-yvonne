@@ -93,43 +93,131 @@ class Shape(ABC):
 
 
 class Circle(Shape):
+    """
+             Create a Circle instance.
+
+             Parameters:
+             - radius (float): The radius of the circle.
+
+             Returns:
+             - Circle: A Circle instance.
+             """
     def __init__(self, radius):
         super().__init__("Circle")
         self._radius = radius
 
     def area(self):
+        """
+        Abstract method to calculate the area of the shape.
+
+        This method must be implemented by concrete subclasses.
+
+        Returns:
+        - float: The area of the shape.
+                        """
         return 3.141592653589793 * (self._radius ** 2)
 
     def perimeter(self):
+        """
+        Abstract method to calculate the perimeter of the shape.
+
+        This method must be implemented by concrete subclasses.
+
+        Returns:
+        - float: The perimeter of the shape.
+        """
         return 2 * 3.141592653589793 * self._radius
 
 
 class Square(Shape):
+    """
+   Create a Square instance.
+
+   Parameters:
+   - side_length (float): The length of a side of the square.
+
+   Returns:
+   - Square: A Square instance.
+   """
+
     def __init__(self, side):
         super().__init__("Square")
         self._side = side
 
     def area(self):
+        """
+        Abstract method to calculate the area of the shape.
+
+        This method must be implemented by concrete subclasses.
+
+        Returns:
+        - float: The area of the shape.
+        """
         return self._side ** 2
 
     def perimeter(self):
+        """
+        Abstract method to calculate the perimeter of the shape.
+
+        This method must be implemented by concrete subclasses.
+
+        Returns:
+        - float: The perimeter of the shape.
+                """
         return 4 * self._side
 
 
 class Rectangle(Shape):
+    """
+    Create a Rectangle instance.
+
+    Parameters:
+    - length (float): The length of the rectangle.
+    - width (float): The width of the rectangle.
+
+    Returns:
+    - Rectangle: A Rectangle instance.
+    """
     def __init__(self, length, width):
         super().__init__("Rectangle")
         self._length = length
         self._width = width
 
     def area(self):
+        """
+        Abstract method to calculate the area of the shape.
+
+        This method must be implemented by concrete subclasses.
+
+        Returns:
+        - float: The area of the shape.
+        """
         return self._length * self._width
 
     def perimeter(self):
+        """
+        Abstract method to calculate the perimeter of the shape.
+
+        This method must be implemented by concrete subclasses.
+
+        Returns:
+        - float: The perimeter of the shape.
+        """
         return 2 * (self._length + self._width)
 
 
 class Triangle(Shape):
+    """
+    Create a Triangle instance.
+
+    Parameters:
+    - side1 (float): The length of the first side of the triangle.
+    - side2 (float): The length of the second side of the triangle.
+    - side3 (float): The length of the third side of the triangle.
+
+    Returns:
+    - Triangle: A Triangle instance.
+    """
     def __init__(self, side1, side2, side3):
         super().__init__("Triangle")
         self._side1 = side1
@@ -137,10 +225,26 @@ class Triangle(Shape):
         self._side3 = side3
 
     def area(self):
+        """
+        Abstract method to calculate the area of the shape.
+
+        This method must be implemented by concrete subclasses.
+
+        Returns:
+        - float: The area of the shape.
+        """
         s = (self._side1 + self._side2 + self._side3) / 2
         return (s * (s - self._side1) * (s - self._side2) * (s - self._side3)) ** 0.5
 
     def perimeter(self):
+        """
+        Abstract method to calculate the perimeter of the shape.
+
+        This method must be implemented by concrete subclasses.
+
+        Returns:
+        - float: The perimeter of the shape.
+        """
         return self._side1 + self._side2 + self._side3
 
 
@@ -207,6 +311,12 @@ class ShapeFactory:
 
 
 class DrawingProgram:
+    """
+     DrawingProgram with a list of shapes.
+
+    Parameters:
+    - shapes (list): A list of Shape objects.
+    """
 
     def __init__(self, shapes=None):
         """
