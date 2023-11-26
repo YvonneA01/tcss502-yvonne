@@ -13,7 +13,9 @@ class Shape(ABC):
         Parameters:
         - name (str): The name of the shape.
         """
-        self._name = name
+
+        self.__name = name
+
 
     def __str__(self):
         """
@@ -32,7 +34,7 @@ class Shape(ABC):
                Parameters:
                - name (str): The name of the shape.
                """
-        return self._name
+        return self.__name
 
     @abstractmethod
     def area(self):
@@ -65,7 +67,7 @@ class Shape(ABC):
                 Returns:
                 - str: A string describing the shape.
                 """
-        return f"{self._name}, area: {self.area()}, perimeter: {self.perimeter()}"
+        return f"{self.name}, area: {self.area()}, perimeter: {self.perimeter()}"
 
     def __lt__(self, other):
         """
@@ -518,15 +520,6 @@ class DrawingProgramMain:
 
 # Example usage:
 # drawing_program = DrawingProgram()
-# shape1 = ShapeFactory.create_shape("Circle", 2.0)
-# shape2 = ShapeFactory.create_shape("Square", 3.0)
-# shape3 = ShapeFactory.create_shape("Rectangle", 2.0, 4.0)
-# shape4 = ShapeFactory.create_shape("Triangle", 3.0, 4.0, 5.0)
-# drawing_program.add_shape(shape1)
-# drawing_program.add_shape(shape2)
-# drawing_program.add_shape(shape3)
-# drawing_program.add_shape(shape4)
-
 # circle = ShapeFactory.create_circle(2.0)
 # square = ShapeFactory.create_square(3.0)
 # rectangle = ShapeFactory.create_rectangle(2.0, 4.0)
@@ -547,5 +540,5 @@ class DrawingProgramMain:
 # for shape in drawing_program:
 #     print(shape)
 
-if __name__ == "__main__":
-    DrawingProgramMain.run()
+# if __name__ == "__main__":
+#     DrawingProgramMain.run()
