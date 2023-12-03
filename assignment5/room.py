@@ -158,5 +158,7 @@ room3.display_info()
 room4.display_info()
 
 # Print the graphical representation
-print(room1)
-print(room2)
+print(f"Room 1: \n{room1})
+print()
+print(f"Room 2: \n{room2})
+
