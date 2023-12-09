@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import math
 import random
 
